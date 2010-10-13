@@ -162,7 +162,7 @@ if [ "$CMD" == "run" ]; then
 
     # nova api crashes if we start it with a regular screen command,
     # so send the start command by forcing text into the window.
-    screen_it api "$VENV$NOVA_DIR/bin/nova-api --flagfile=/etc/nova/nova-manage.conf"
+    screen_it api "$VENV$NOVA_DIR/bin/nova-api --flagfile=/etc/nova/nova-manage.conf --FAKE_subdomain=api"
     screen_it objectstore "$VENV$NOVA_DIR/bin/nova-objectstore --flagfile=/etc/nova/nova-manage.conf"
     screen_it compute "$VENV$NOVA_DIR/bin/nova-compute --flagfile=/etc/nova/nova-manage.conf"
     screen_it network "$VENV$NOVA_DIR/bin/nova-network --flagfile=/etc/nova/nova-manage.conf"
